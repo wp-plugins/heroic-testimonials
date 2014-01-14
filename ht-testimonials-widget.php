@@ -29,6 +29,7 @@ array(
 
 } // end constructor
 
+
 /*--------------------------------------------------*/
 /* Widget API Functions
 /*--------------------------------------------------*/
@@ -64,9 +65,22 @@ $args = array(
     'posts_per_page'   =>     $number_to_display_int
   );
 
-$testimonials_posts = get_posts($args);
-
-foreach ($testimonials_posts as $testimonial) {
+$testimonials_posts = get_posts($args); ?>
+<script type="text/javascript">
+jQuery(window).load(function(){
+	jQuery('.ht-testimonials.flexslider').flexslider({
+		controlNav: false,
+		prevText: "",
+		nextText: "",
+		animation: "slide",
+		smoothHeight: true,
+		randomize: true,
+	});
+});
+</script>
+<div class="ht-testimonials flexslider">
+<ul class="slides">
+<?php foreach ($testimonials_posts as $testimonial) {
   $testimonial_title = $testimonial->post_title;
   $testimonial_text = $testimonial->post_content;
   $testimonial_client_name = get_post_meta($testimonial->ID, $this->testimonial_client_name_key, true);
@@ -75,22 +89,27 @@ foreach ($testimonials_posts as $testimonial) {
   $testimonial_image = get_post_meta($testimonial->ID, $this->testimonial_client_image_key, true);
 
 ?>
+<li>
   <div class="ht-testimonial clearfix" itemscope itemtype="http://schema.org/Review">
-  <div class="ht-testimonial-body clearfix" itemprop="reviewBody"><i class="fa fa-quote-left"></i><p><?php echo $testimonial_text; ?></p><i class="fa fa-quote-right"></i></div>
+  <div class="ht-testimonial-body clearfix <?php if ($testimonial_client_name == '') { echo 'no-author'; }?>" itemprop="reviewBody"><i class="fa fa-quote-left"></i><p><?php echo $testimonial_text; ?></p></div>
   <div class="ht-testimonial-author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-  <img src="<?php echo $testimonial_image; ?>" alt="" />
-  <span itemprop="name"><?php echo $testimonial_client_name; ?></span>
+  <?php if ($testimonial_image != '') { ?><img class="ht-testimonial-author-image" src="<?php echo $testimonial_image; ?>" alt="" /><?php } ?>
+  <?php if ($testimonial_client_name != '') { ?><span class="ht-testimonial-author-name" itemprop="name"><?php echo $testimonial_client_name; ?></span><?php } ?>
+  <?php if ($testimonial_byline != '') { ?><span class="ht-testimonial-author-byline"><?php if ($testimonial_url != '') { ?><a href="<?php echo $testimonial_url ?>"><?php } ?><?php echo $testimonial_byline; ?><?php if ($testimonial_url != '') { ?></a><?php } ?></span><?php } ?>
   </div>
   </div>
-<?php
-}
-	
-?>
-
+</li>
+<?php } ?>
+</ul>
+</div>
 <?php 
 echo $after_widget;
 
 } // end widget
+
+
+
+
 
 /**
 * Processes the widget's options to be saved.

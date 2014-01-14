@@ -4,7 +4,7 @@
 *	Plugin URI:  http://wordpress.org/plugins/hero-themes-testimonials/
 *	Description: Adds Testimonials
 *	Author: Hero Themes
-*	Version: 1.0
+*	Version: 1.1
 *	Author URI: http://www.herothemes.com/
 *	Text Domain: ht-testimonials
 */
@@ -14,6 +14,8 @@ if( !class_exists( 'HT_Testimonials' ) ){
 	class HT_Testimonials {
 		//Constructor
 		function __construct(){
+			load_plugin_textdomain('ht-testimonials-widget', false, basename( dirname( __FILE__ ) ) . '/languages' );
+			
 			add_action( 'init', array( $this,  'register_ht_testimonials_cpt' ) );
 			add_action( 'init', array( $this,  'register_ht_testimonials_category_taxonomy' ) );
 
@@ -61,7 +63,7 @@ if( !class_exists( 'HT_Testimonials' ) ){
 				'public'                     => true,
 				'show_ui'                    => true,
 				'show_admin_column'          => true,
-				'show_in_nav_menus'          => true,
+				'show_in_nav_menus'          => false,
 				'show_tagcloud'              => true,
 			);
 			register_taxonomy( 'ht_testimonials_category', 'ht_testimonials', $args );
@@ -98,6 +100,7 @@ if( !class_exists( 'HT_Testimonials' ) ){
 				'publicly_queryable' => true,
 				'show_ui'            => true,
 				'show_in_menu'       => true,
+				'show_in_nav_menus'	 => false,
 				'query_var'          => true,
 				'rewrite'            => array( 'slug' => $rewrite ),
 				'capability_type'    => 'post',
@@ -117,7 +120,7 @@ if( !class_exists( 'HT_Testimonials' ) ){
 		*/
 		function add_ht_testimonials_meta_boxes(){
 			global $_wp_post_type_features;
-			add_meta_box( 'ht_testimonials_meta', __( 'Testimonials', 'ht-testimonials' ), array( $this, 'add_ht_testimonials_meta_callback'  ), 'ht_testimonials' );
+			add_meta_box( 'ht_testimonials_meta', __( 'Testimonial Details', 'ht-testimonials' ), array( $this, 'add_ht_testimonials_meta_callback'  ), 'ht_testimonials' );
 				
 			if (isset($_wp_post_type_features['ht_testimonials']['editor']) && $_wp_post_type_features['ht_testimonials']['editor']) {
 				unset($_wp_post_type_features['ht_testimonials']['editor']);
@@ -146,22 +149,22 @@ if( !class_exists( 'HT_Testimonials' ) ){
 
 			    ?>
 			 
-			    <p>
-			        <label for="<?php echo $this->testimonial_client_name_key; ?>" class="row-title"><?php _e( 'Client Name', 'ht-testimonials' )?></label>
-			        <input type="text" name="<?php echo $this->testimonial_client_name_key; ?>" id="<?php echo $this->testimonial_client_name_key; ?>" value="<?php echo $testimonial_client_name; ?>" />
+			    <p class="testimonial-row">
+			        <label for="<?php echo $this->testimonial_client_name_key; ?>" class="row-title testimonial-row-title"><?php _e( 'Client Name', 'ht-testimonials' )?></label>
+			        <input type="text" class="testimonial-input" name="<?php echo $this->testimonial_client_name_key; ?>" id="<?php echo $this->testimonial_client_name_key; ?>" value="<?php echo $testimonial_client_name; ?>" />
 			    </p>
-			    <p>
-			        <label for="<?php echo $this->testimonial_client_byline_key; ?>" class="row-title"><?php _e( 'Client Byline', 'ht-testimonials' )?></label>
-			        <input type="text" name="<?php echo $this->testimonial_client_byline_key; ?>" id="<?php echo $this->testimonial_client_byline_key; ?>" value="<?php echo $testimonial_client_byline; ?>" />
+			    <p class="testimonial-row">
+			        <label for="<?php echo $this->testimonial_client_byline_key; ?>" class="row-title testimonial-row-title"><?php _e( 'Client Byline', 'ht-testimonials' )?></label>
+			        <input type="text" class="testimonial-input" name="<?php echo $this->testimonial_client_byline_key; ?>" id="<?php echo $this->testimonial_client_byline_key; ?>" value="<?php echo $testimonial_client_byline; ?>" />
 			    </p>
-			    <p>
-			        <label for="<?php echo $this->testimonial_client_url_key; ?>" class="row-title"><?php _e( 'Client URL', 'ht-testimonials' )?></label>
-			        <input type="text" name="<?php echo $this->testimonial_client_url_key; ?>" id="<?php echo $this->testimonial_client_url_key; ?>" value="<?php echo $testimonial_client_url; ?>" />
+			    <p class="testimonial-row">
+			        <label for="<?php echo $this->testimonial_client_url_key; ?>" class="row-title testimonial-row-title"><?php _e( 'Client URL', 'ht-testimonials' )?></label>
+			        <input type="text" class="testimonial-input" name="<?php echo $this->testimonial_client_url_key; ?>" id="<?php echo $this->testimonial_client_url_key; ?>" value="<?php echo $testimonial_client_url; ?>" />
 			    </p>
 			   
-			    <p>
-				    <label for="<?php echo $this->testimonial_client_image_key; ?>" class="row-title"><?php _e( 'Client Image', 'ht-testimonials' )?></label>
-				    <input type="text" name="<?php echo $this->testimonial_client_image_key; ?>" id="<?php echo $this->testimonial_client_image_key; ?>" value="<?php echo $testimonial_client_image; ?>" />
+			    <p class="testimonial-row">
+				    <label for="<?php echo $this->testimonial_client_image_key; ?>" class="row-title testimonial-row-title"><?php _e( 'Client Image', 'ht-testimonials' )?></label>
+				    <input type="text" class="testimonial-input" name="<?php echo $this->testimonial_client_image_key; ?>" id="<?php echo $this->testimonial_client_image_key; ?>" value="<?php echo $testimonial_client_image; ?>" />
 				    <input type="button" id="<?php echo $this->testimonial_client_image_key; ?>-button" class="button" value="<?php _e( 'Choose or Upload an Image', 'ht-testimonials' )?>" />
 				</p>
 			 
@@ -228,6 +231,8 @@ if( !class_exists( 'HT_Testimonials' ) ){
 		            )
 		        );
 		        wp_enqueue_script( 'ht-testimonials-backend-script' );
+
+		        wp_enqueue_style( 'ht-testimonials-backend-style', plugins_url( 'css/ht-testimonials-backend-style.css', __FILE__ ));
 		    }
 		}
 
