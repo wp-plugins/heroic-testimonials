@@ -1,0 +1,172 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Heroic Testimonials\n"
+"POT-Creation-Date: 2014-01-10 15:46-0000\n"
+"PO-Revision-Date: 2014-01-10 15:46-0000\n"
+"Last-Translator: \n"
+"Language-Team: Hero Themes\n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.6.3\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c\n"
+"X-Poedit-SearchPath-0: ..\n"
+
+#: ../ht-testimonials.php:38
+msgid "Testimonial"
+msgstr ""
+
+#: ../ht-testimonials.php:42
+msgctxt "Taxonomy General Name"
+msgid "Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:43
+msgctxt "Taxonomy Singular Name"
+msgid "Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:44
+msgid "Testimonials Categories"
+msgstr ""
+
+#: ../ht-testimonials.php:45
+msgid "All Testimonials Categories"
+msgstr ""
+
+#: ../ht-testimonials.php:46
+msgid "Parent Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:47
+msgid "Parent Testimonials Category:"
+msgstr ""
+
+#: ../ht-testimonials.php:48
+msgid "New Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:49
+msgid "Add New Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:50
+msgid "Edit Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:51
+msgid "Update Testimonials Category"
+msgstr ""
+
+#: ../ht-testimonials.php:52
+msgid "Separate Testimonials Categories with commas"
+msgstr ""
+
+#: ../ht-testimonials.php:53
+msgid "Search Testimonials Categories"
+msgstr ""
+
+#: ../ht-testimonials.php:54
+msgid "Add or remove categories"
+msgstr ""
+
+#: ../ht-testimonials.php:55
+msgid "Choose from the most used categories"
+msgstr ""
+
+#: ../ht-testimonials.php:75
+msgid "Heroic Testimonial"
+msgstr ""
+
+#: ../ht-testimonials.php:76
+msgid "Testimonials"
+msgstr ""
+
+#: ../ht-testimonials.php:82 ../ht-testimonials.php:83
+msgid "Add New"
+msgstr ""
+
+#: ../ht-testimonials.php:84
+msgid "Edit"
+msgstr ""
+
+#: ../ht-testimonials.php:85
+msgid "New"
+msgstr ""
+
+#: ../ht-testimonials.php:86
+msgid "All"
+msgstr ""
+
+#: ../ht-testimonials.php:87
+msgid "View"
+msgstr ""
+
+#: ../ht-testimonials.php:88
+msgid "Search"
+msgstr ""
+
+#: ../ht-testimonials.php:89
+#, php-format
+msgid "No %s found"
+msgstr ""
+
+#: ../ht-testimonials.php:90
+#, php-format
+msgid "No %s found in trash"
+msgstr ""
+
+#: ../ht-testimonials.php:121
+msgid "Testimonial Details"
+msgstr ""
+
+#: ../ht-testimonials.php:127
+msgid "Testimonial Text"
+msgstr ""
+
+#: ../ht-testimonials.php:151
+msgid "Client Name"
+msgstr ""
+
+#: ../ht-testimonials.php:155
+msgid "Client Byline"
+msgstr ""
+
+#: ../ht-testimonials.php:159
+msgid "Client URL"
+msgstr ""
+
+#: ../ht-testimonials.php:164
+msgid "Client Image"
+msgstr ""
+
+#: ../ht-testimonials.php:166 ../ht-testimonials.php:227
+msgid "Choose or Upload an Image"
+msgstr ""
+
+#: ../ht-testimonials.php:228
+msgid "Use this image"
+msgstr ""
+
+#: ../ht-testimonials-widget.php:18
+msgid "Custom Testimonials Widget"
+msgstr ""
+
+#: ../ht-testimonials-widget.php:21
+msgid "A widget for displaying testimonials."
+msgstr ""
+
+#: ../ht-testimonials-widget.php:134
+msgid "Title"
+msgstr ""
+
+#: ../ht-testimonials-widget.php:141
+msgid "Number to display"
+msgstr ""
+
+#: ../ht-testimonials-widget.php:157
+msgid "Category"
+msgstr ""

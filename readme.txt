@@ -3,7 +3,7 @@ Contributors: herothemes
 Tags: testimonial, widget, client, customer, review
 Requires at least: 3.5
 Tested up to: 3.8
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,11 @@ A. Please raise your question on the Heroic Testimonials Widget support page at 
 
 
 == Changelog ==
+
+= 1.2 =
+
+Added translation files
+
 
 = 1.1 =
 

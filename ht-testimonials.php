@@ -4,7 +4,7 @@
 *	Plugin URI:  http://wordpress.org/plugins/hero-themes-testimonials/
 *	Description: Adds Testimonials
 *	Author: Hero Themes
-*	Version: 1.1
+*	Version: 1.2
 *	Author URI: http://www.herothemes.com/
 *	Text Domain: ht-testimonials
 */
