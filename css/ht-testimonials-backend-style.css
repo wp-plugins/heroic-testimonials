@@ -1,0 +1,21 @@
+body {
+	
+}
+
+label.testimonial-row-title {
+	width : 150px;
+	display: block;
+	float: left;
+}
+
+p.testimonial-row {
+	display: block;
+	clear: left;
+	/*float: left;*/
+}
+
+p.testimonial-row input.testimonial-input{
+	display: block;
+	width: 250px;
+	float: left;
+}
